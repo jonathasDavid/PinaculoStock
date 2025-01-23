@@ -2,24 +2,16 @@ package programa;
 
 import java.time.LocalDate;
 
-public class SaidaEstoque {
-    private int id;
-    private Produto produto;
-    private int quantidade;
-    private LocalDate data;
-
+public class SaidaEstoque extends MovimentacaoEstoque {
     // Construtor
     public SaidaEstoque(int id, Produto produto, int quantidade, LocalDate data) {
-        this.id = id;
-        this.produto = produto;
-        this.quantidade = quantidade;
-        this.data = data;
+        super(id, produto, quantidade, data);
     }
 
-    // Método para registrar saída
-    public void registrarSaida() {
+    @Override
+    public void registrar() {
         produto.removerEstoque(quantidade);
         System.out.println("Saída registrada: " + quantidade + " unidades do produto " + produto.getNome());
     }
-}
+}	
 

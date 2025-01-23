@@ -16,6 +16,11 @@ public class Estoque {
         listaProdutos.add(produto);
     }
 
+    // Sobrecarga do método adicionarProduto
+    public void adicionarProduto(List<Produto> produtos) {
+        listaProdutos.addAll(produtos);
+    }
+
     public Produto buscarProduto(String nome) {
         for (Produto produto : listaProdutos) {
             if (produto.getNome().equalsIgnoreCase(nome)) {
@@ -24,6 +29,7 @@ public class Estoque {
         }
         return null;
     }
+
     public Produto buscarProdutoPorId(int id) {
         for (Produto produto : listaProdutos) {
             if (produto.getId() == id) {
@@ -40,4 +46,5 @@ public class Estoque {
         }
     }
 }
+
 
